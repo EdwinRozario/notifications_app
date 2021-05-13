@@ -4,7 +4,6 @@ import 'package:animation/size_config.dart';
 import 'package:flutter/material.dart';
 
 import 'land.dart';
-import 'rounded_text_field.dart';
 import 'sun.dart';
 import 'tabs.dart';
 
@@ -17,6 +16,7 @@ class _BodyState extends State<Body> {
   bool isFullSun = false;
   bool isDayMood = true;
   String welcomeHeading = 'Good Morning';
+  String artist = 'Disciples';
 
   Duration _duration = Duration(seconds: 1);
 
@@ -27,6 +27,7 @@ class _BodyState extends State<Body> {
       setState(() {
         isFullSun = true;
         welcomeHeading = 'Good Morning';
+        artist = 'Disciples';
       });
     });
   }
@@ -36,6 +37,7 @@ class _BodyState extends State<Body> {
       setState(() {
         isDayMood = true;
         welcomeHeading = 'Good Morning';
+        artist = 'Disciples';
       });
 
       Future.delayed(Duration(milliseconds: 300), () {
@@ -47,6 +49,7 @@ class _BodyState extends State<Body> {
       setState(() {
         isFullSun = false;
         welcomeHeading = 'Good Evening';
+        artist = 'Kavinsky';
       });
 
       Future.delayed(Duration(milliseconds: 300), () {
@@ -100,16 +103,18 @@ class _BodyState extends State<Body> {
                     style: Theme.of(context).textTheme.headline3.copyWith(
                         fontWeight: FontWeight.bold, color: Colors.white),
                   ),
-                  VerticalSpacing(of: 150),
+                  VerticalSpacing(of: 180),
                   Tabs(
                     press: (value) {
                       changeMood(value);
                     },
                   ),
-                  VerticalSpacing(of: 50),
-                  Text(
-                    "Enter your Informations below",
-                    style: TextStyle(color: Colors.white),
+                  VerticalSpacing(of: 350),
+                  Center(
+                    child: Text(
+                      this.artist,
+                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ],
               ),
