@@ -13,7 +13,7 @@ class Tabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: SizeConfig.screenWidth * 0.8, // 80%
+      width: SizeConfig.screenWidth * 0.9, // 80%
       decoration: BoxDecoration(
         color: Colors.white24,
         borderRadius: BorderRadius.circular(12),
@@ -30,7 +30,7 @@ class Tabs extends StatelessWidget {
           labelColor: Colors.black,
           unselectedLabelColor: Colors.white,
           onTap: press,
-          tabs: [Tab(text: "Morning Login"), Tab(text: "Night Login")],
+          tabs: [Tab(text: 'Daylight'), Tab(text: 'NightCall')],
         ),
       ),
     );

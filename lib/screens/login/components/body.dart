@@ -16,6 +16,8 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   bool isFullSun = false;
   bool isDayMood = true;
+  String welcomeHeading = 'Good Morning';
+
   Duration _duration = Duration(seconds: 1);
 
   @override
@@ -24,6 +26,7 @@ class _BodyState extends State<Body> {
     Future.delayed(Duration(seconds: 1), () {
       setState(() {
         isFullSun = true;
+        welcomeHeading = 'Good Morning';
       });
     });
   }
@@ -32,7 +35,9 @@ class _BodyState extends State<Body> {
     if (activeTabNum == 0) {
       setState(() {
         isDayMood = true;
+        welcomeHeading = 'Good Morning';
       });
+
       Future.delayed(Duration(milliseconds: 300), () {
         setState(() {
           isFullSun = true;
@@ -41,7 +46,9 @@ class _BodyState extends State<Body> {
     } else {
       setState(() {
         isFullSun = false;
+        welcomeHeading = 'Good Evening';
       });
+
       Future.delayed(Duration(milliseconds: 300), () {
         setState(() {
           isDayMood = false;
@@ -58,11 +65,13 @@ class _BodyState extends State<Body> {
       Color(0xFFFF9485),
       if (isFullSun) Color(0xFFFF9D80),
     ];
+
     var darkBgColors = [
       Color(0xFF0D1441),
       Color(0xFF283584),
       Color(0xFF376AB2),
     ];
+
     return AnimatedContainer(
       duration: _duration,
       curve: Curves.easeInOut,
@@ -85,32 +94,22 @@ class _BodyState extends State<Body> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  VerticalSpacing(of: 50),
+                  VerticalSpacing(of: 70),
+                  Text(
+                    this.welcomeHeading,
+                    style: Theme.of(context).textTheme.headline3.copyWith(
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
+                  VerticalSpacing(of: 150),
                   Tabs(
                     press: (value) {
                       changeMood(value);
                     },
                   ),
-                  VerticalSpacing(),
-                  Text(
-                    "Good Morning",
-                    style: Theme.of(context).textTheme.headline3.copyWith(
-                        fontWeight: FontWeight.bold, color: Colors.white),
-                  ),
-                  VerticalSpacing(of: 10),
+                  VerticalSpacing(of: 50),
                   Text(
                     "Enter your Informations below",
                     style: TextStyle(color: Colors.white),
-                  ),
-                  VerticalSpacing(of: 50),
-                  RoundedTextField(
-                    initialValue: "ourdemo@email.com",
-                    hintText: "Email",
-                  ),
-                  VerticalSpacing(),
-                  RoundedTextField(
-                    initialValue: "XXXXXXX",
-                    hintText: "Password",
                   ),
                 ],
               ),
