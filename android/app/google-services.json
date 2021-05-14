@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "123858415762",
+    "project_id": "notifications-app-9eac1",
+    "storage_bucket": "notifications-app-9eac1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123858415762:android:9f797884f37bb20f89764b",
+        "android_client_info": {
+          "package_name": "nz.co.boost.notifications"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "123858415762-f4kjsb9vebhj7sevdkrfa143s3ruta22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkqpmktkjgHwlLYRnV1QKUGelgH3IBRTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "123858415762-f4kjsb9vebhj7sevdkrfa143s3ruta22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

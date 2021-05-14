@@ -1,4 +1,4 @@
-package com.example.animation
+package nz.co.boost.notifications
 
 import io.flutter.embedding.android.FlutterActivity
 
